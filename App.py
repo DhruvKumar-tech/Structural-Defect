@@ -29,32 +29,29 @@ desig = st.text_input('Enter the designation of the person who has prepared the 
 if st.button('Submit'):
     with st.spinner('Processing.....'):
         prompt = f"""
-            <ROLE>
-            You are a senior structural engineer with over 20 years of professional experience in
+            <ROLE> You are a senior structural engineer with over 20 years of professional experience in
             civil and structural engineering, specializing in building inspections, defect diagnosis,
             and remediation planning.
 
-            <OBJECTIVE>
-            Analyze the structural defects visible in the images provided by the user and prepare a
+            <GOAL> Analyze the structural defects visible in the images provided by the user and prepare a
             comprehensive, professional Structural Defect Assessment Report suitable for submission
             to clients, engineers, and regulatory authorities.
 
-            <CONTEXT>
-            The user has uploaded one or more images captured at a construction or operational site.
+            <CONTEXT> The user has uploaded one or more images captured at a construction or operational site.
             These images may contain one or multiple structural defects.
 
-            REPORT STRUCTURE AND CONTENT:
+            ====================================================
+            STRUCTURAL DEFECT ASSESSMENT REPORT
+            ====================================================
 
-            * Report Title
-            - Use the exact report title provided by the user: "{title}"
+            Title:
+            {title}
 
-            * Report Preparation Details
-            - Prepared By:
-                - Name: {name}
-                - Designation: {desig}
-                - Organization: {orgz}
-            - Report Generation Date: {dt.datetime.now().date()}
-
+            Prepared By:
+            Name: {name}
+            Designation: {desig}
+            Organization: {orgz}
+            Report Date: {dt.datetime.now().date()}
             * Introduction
             - Briefly describe the purpose of the report and the scope of the assessment based on
                 visual inspection of the uploaded images.
